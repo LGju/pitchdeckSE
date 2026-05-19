@@ -64,7 +64,7 @@ export function TrustSection() {
             {[
               { label: "Återförsäljare litar på autofox", value: 3800, suffix: "+" },
               { label: "Bilder bearbetade", value: 65, suffix: "M" },
-              { label: "Typisk ROI", value: "300–800%" },
+              { label: "Typisk ROI", value: "300-700%" },
               { label: "Länder betjänade", value: 40, suffix: "+" },
             ].map((s) => (
               <div key={s.label} className="bg-card p-8">
