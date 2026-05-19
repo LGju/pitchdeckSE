@@ -1,0 +1,399 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================
+   AUTOFOX DESIGN SYSTEM  —  mapped to shadcn / Tailwind tokens
+   Source of truth: "Autofox pitch eng" Figma + colors_and_type.css
+   ========================================================= */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Raw autofox palette ---------- */
+  --af-black:     #000000;
+  --af-ink-900:   #181818;
+  --af-ink-850:   #1C1C1C;
+  --af-ink-800:   #202020;
+  --af-ink-700:   #2A2A2A;
+  --af-ink-500:   #868484;
+  --af-white:     #FFFFFF;
+  --af-snow:      #F8F8F9;
+  --af-fog:       #EFF1F4;
+  --af-mist:      #FBFBFC;
+
+  --af-red:        #E40E41;
+  --af-red-rose:   #FF5078;
+  --af-red-bloom:  #FF86A2;
+  --af-red-petal:  #FFC3D1;
+  --af-brand-grad: linear-gradient(180deg, #E40E41 0%, #FF5078 100%);
+
+  --af-green:       #15CB70;
+  --af-green-deep:  #0DBC65;
+  --af-green-glow:  #0EE479;
+  --af-green-mint:  #B2F2DC;
+
+  /* ---------- Shape ---------- */
+  --af-radius-pill: 18px;
+  --af-radius-chip: 15.29px;
+  --af-radius-card: 16px;
+  --af-radius-sm:   8px;
+
+  /* ---------- Semantic (shadcn contract) ---------- */
+  --background: var(--af-white);
+  --foreground: var(--af-black);
+
+  --card: var(--af-snow);
+  --card-foreground: var(--af-black);
+
+  --popover: var(--af-white);
+  --popover-foreground: var(--af-black);
+
+  --primary: var(--af-red);
+  --primary-foreground: var(--af-white);
+
+  --secondary: var(--af-fog);
+  --secondary-foreground: var(--af-black);
+
+  --muted: var(--af-snow);
+  --muted-foreground: rgba(0, 0, 0, 0.70);
+
+  --accent: var(--af-fog);
+  --accent-foreground: var(--af-black);
+
+  --destructive: var(--af-red);
+  --destructive-foreground: var(--af-white);
+
+  --success: var(--af-green);
+  --success-foreground: var(--af-white);
+
+  --border: rgba(25, 25, 25, 0.15);
+  --input:  rgba(25, 25, 25, 0.15);
+  --ring:   var(--af-red);
+  --radius: 16px;
+
+  /* ---------- "Ink" dark surface (inverted slides) ---------- */
+  --ink:            var(--af-ink-900);
+  --ink-foreground: var(--af-white);
+  --ink-muted:      var(--af-ink-700);
+
+  /* ---------- Charts ---------- */
+  --chart-1: var(--af-red);
+  --chart-2: var(--af-red-rose);
+  --chart-3: var(--af-green);
+  --chart-4: var(--af-ink-700);
+  --chart-5: var(--af-ink-500);
+
+  /* ---------- Sidebar (shadcn) ---------- */
+  --sidebar: var(--af-white);
+  --sidebar-foreground: var(--af-black);
+  --sidebar-primary: var(--af-red);
+  --sidebar-primary-foreground: var(--af-white);
+  --sidebar-accent: var(--af-fog);
+  --sidebar-accent-foreground: var(--af-black);
+  --sidebar-border: rgba(25, 25, 25, 0.15);
+  --sidebar-ring: var(--af-red);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Expose the raw autofox palette as Tailwind colors (bg-af-red, text-af-red-petal, etc.) */
+  --color-af-black: var(--af-black);
+  --color-af-ink-900: var(--af-ink-900);
+  --color-af-ink-850: var(--af-ink-850);
+  --color-af-ink-800: var(--af-ink-800);
+  --color-af-ink-700: var(--af-ink-700);
+  --color-af-ink-500: var(--af-ink-500);
+  --color-af-snow: var(--af-snow);
+  --color-af-fog: var(--af-fog);
+  --color-af-red: var(--af-red);
+  --color-af-red-rose: var(--af-red-rose);
+  --color-af-red-bloom: var(--af-red-bloom);
+  --color-af-red-petal: var(--af-red-petal);
+  --color-af-green: var(--af-green);
+  --color-af-green-glow: var(--af-green-glow);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html {
+    color-scheme: light;
+    background: var(--background);
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01";
+  }
+  h1, h2, h3, h4 { letter-spacing: -0.01em; }
+  ::selection {
+    background: color-mix(in oklch, var(--af-red) 22%, transparent);
+    color: var(--af-black);
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--af-fog); }
+  ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--af-red); }
+}
+
+/* =========================================================
+   Autofox component primitives — match Figma exactly
+   ========================================================= */
+
+/* Gradient-filled text (the "fox" in wordmark) */
+.af-gradient-text {
+  background: var(--af-brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* BEFORE / AFTER / SOLD / LOST-SALE chips */
+.af-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px 0 12px;
+  border-radius: var(--af-radius-chip);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 0.84;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.af-chip--before,
+.af-chip--lost  { background: var(--af-brand-grad); }
+.af-chip--lost  { font-size: 12px; height: 22px; padding: 0 8px 0 10px; }
+.af-chip--after,
+.af-chip--sold  { background: var(--af-green); }
+
+/* Outline pill — "AI-powered transformations" */
+.af-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 20px;
+  border-radius: var(--af-radius-pill);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  transition: all 0.18s ease;
+}
+.af-pill--outline {
+  border-color: var(--border);
+  background: var(--background);
+  color: var(--foreground);
+}
+.af-pill--outline:hover {
+  border-color: color-mix(in oklch, var(--foreground) 30%, transparent);
+}
+.af-pill--primary {
+  height: 44px;
+  padding: 0 22px;
+  border-color: transparent;
+  background: var(--af-brand-grad);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 10px 30px -10px color-mix(in oklch, var(--primary) 55%, transparent);
+}
+.af-pill--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 36px -10px color-mix(in oklch, var(--primary) 65%, transparent);
+}
+.af-pill--ghost {
+  border-color: transparent;
+  background: color-mix(in oklch, var(--foreground) 5%, transparent);
+  color: var(--foreground);
+}
+.af-pill--ghost:hover {
+  background: color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+
+/* Stat tile (light) — mirrors stat-tiles-light.html */
+.af-tile {
+  background: var(--af-snow);
+  border-radius: var(--af-radius-card);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+.af-tile-num {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+.af-tile-lbl {
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+.af-tile-src {
+  font-size: 11px;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dark-slide tile — mirrors stat-tiles-dark.html */
+.af-tile-dark {
+  background: var(--af-ink-850);
+  color: var(--af-white);
+  border-radius: var(--af-radius-card);
+  padding: 22px 24px;
+}
+.af-tile-dark .af-tile-num { color: #fff; }
+.af-tile-dark .af-tile-sub {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--af-red-petal);
+}
+
+/* Section eyebrow */
+.af-eyebrow {
+  font-size: 16px;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.70);
+}
+
+/* Utilities kept from earlier version (grid, masks, animations) */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.bg-grid-sm {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg-dot {
+  background-image: radial-gradient(rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.bg-dot-dark {
+  background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.ink-panel { background: var(--ink); color: var(--ink-foreground); }
+
+.mask-radial {
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+.mask-fade-b {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.glow-primary {
+  box-shadow:
+    0 10px 30px -12px rgba(228, 14, 65, 0.35),
+    0 0 80px -30px rgba(255, 80, 120, 0.35);
+}
+
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes marquee-reverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+.animate-marquee         { animation: marquee 40s linear infinite; }
+.animate-marquee-slow    { animation: marquee 60s linear infinite; }
+.animate-marquee-reverse { animation: marquee-reverse 50s linear infinite; }
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.8; } 100% { transform: scale(2.4); opacity: 0; } }
+.animate-pulse-ring { animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 8s linear infinite; }
+
+@keyframes shine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.animate-shine {
+  background: linear-gradient(110deg, transparent 30%, rgba(228,14,65,0.08) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shine 3s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
