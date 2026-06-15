@@ -26,32 +26,6 @@ type Client = {
 
 const CLIENTS: Client[] = [
   {
-    id: "riddermark",
-    name: "Riddermark Bil",
-    flag: "SE",
-    tagline: "Sveriges största begagnatbilsåterförsäljare · Rikstäckande",
-    partnerSince: "2026",
-    facilityImage: "/clients/riddermark-facility.jpg",
-    facilityAlt:
-      "Flygvy vid soluppgång över Riddermarks anläggning med tusentals fordon på parkeringen",
-    stats: [
-      { icon: Building2, k: "Årlig omsättning", v: "€1B+" },
-      { icon: Car, k: "Fordon / år", v: "50 000+" },
-      { icon: ShieldCheck, k: "Anläggningar", v: "20+" },
-    ],
-    listing: {
-      title: "Audi SQ7 TDI quattro",
-      subtitle: "Svart · 4.0 V8 · Fotograferad på 4 min",
-      photos: [
-        { src: "/clients/sq7-hero.jpg", alt: "Audi SQ7 TDI quattro bakre trekvart studiobild", label: "Bakre 3/4" },
-        { src: "/clients/sq7-front34.jpg", alt: "Audi SQ7 främre trekvart studiobild", label: "Främre 3/4" },
-        { src: "/clients/sq7-side.jpg", alt: "Audi SQ7 sidoprofil studiobild", label: "Sidoprofil" },
-        { src: "/clients/sq7-interior.jpg", alt: "Audi SQ7 quiltat läderinteriör", label: "Interiör" },
-        { src: "/clients/sq7-wheel.jpg", alt: "Audi SQ7 fälg och bromsokdetalj", label: "Fälgdetalj" },
-      ],
-    },
-  },
-  {
     id: "amag",
     name: "AMAG Group AG",
     flag: "CH",

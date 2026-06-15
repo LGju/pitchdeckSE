@@ -1,6 +1,5 @@
 "use client"
 
-import { SectionLabel } from "./section-label"
 import { Reveal } from "./reveal"
 import { AnimatedCounter } from "./animated-counter"
 
@@ -47,11 +46,6 @@ export function TrustSection() {
     <section className="relative border-t border-border/60 bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <SectionLabel className="justify-center" number="07">
-              Betrott världen över
-            </SectionLabel>
-          </Reveal>
           <Reveal delay={100}>
             <h2 className="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
               Den <span className="font-display text-primary">#1</span> AI-fotograferingslösningen för återförsäljare.
