@@ -38,13 +38,13 @@ const STEPS: Step[] = [
     id: "vin",
     num: "01",
     label: "Identifiera",
-    title: "Skanna VIN",
-    desc: "Rikta kameran mot vindrutan. Vår skanner läser VIN via OCR, streckkod eller QR — eller skriv in manuellt. Fordonsdata hämtas automatiskt.",
+    title: "Skanna Registreringsnummer",
+    desc: "Rikta kameran mot vindrutan. Vår skanner läser registreringsnummer via OCR, streckkod eller QR — eller skriv in manuellt. Fordonsdata hämtas automatiskt.",
     kind: "image",
     src: "/app/vin-scan.png",
     orientation: "portrait",
     icon: ScanLine,
-    highlights: ["VIN eller registreringsskylt", "Fyller i VIN automatiskt"],
+    highlights: ["Registreringsnummer eller registreringsskylt", "Fyller i registreringsnummer automatiskt"],
   },
   {
     id: "theme",
@@ -80,7 +80,7 @@ const STEPS: Step[] = [
     src: "/app/grid-empty.png",
     orientation: "portrait",
     icon: Images,
-    highlights: ["Standardiserat vinkelset", "Inget glöms bort", "VIN-kopplat till varje bild"],
+    highlights: ["Standardiserat vinkelset", "Inget glöms bort", "Registreringsnummer-kopplat till varje bild"],
   },
   {
     id: "process",
@@ -140,7 +140,7 @@ export function MobileAppSection() {
             </Reveal>
             <Reveal delay={100}>
               <h2 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-                Från VIN till webbplats <span className="font-display text-primary">i sex steg</span>.
+                Från registreringsnummer till webbplats <span className="font-display text-primary">i sex steg</span>.
               </h2>
             </Reveal>
             <Reveal delay={200}>
